@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/register.css">
+    <title>Sing up</title>
+    <script src="../script/register.js" defer></script>
+    <script src="../script/login.js" defer></script>
+    <script src="../script/script.js" defer></script>
+    <script src="../script/contacts-register.js" defer></script>
+</head>
+
+<body>
+    <div id="register-success-overlay" class="register-success-overlay"></div>
+    <div id="register-success-message" class="register-success-message">You Signed up successfully</div>
+    <main class="flex-column flex-center">
+        <img id="register-logo" src="../assets/img/logo.png">
+        <div class="register-container flex-column flex-center">
+            <a href="../index.html"><img class="register-arrow-left-line" src="../assets/icons/arrow-left-line.svg"
+                    alt=""></a>
+            <div>
+                <h1>Sign up</h1>
+            </div>
+            <div class="register-underline"></div>
+            <form id="register-form" onsubmit="register(event)">
+                <div class="flex-column flex-center">
+                    <input id="register-input-name" class="register-input-fields" type="text" placeholder="Name"
+                        required>
+                    <div class="register-email-container flex-center flex-column">
+                        <input id="register-input-email" class="register-input-fields" onkeydown="removeDoubleUserError()" type="email" placeholder="Email"
+                            required>
+                        <span id="register-input-email-error" class="d-none">There is already an account for this email</span>
+                    </div>
+                    <input id="register-input-password" class="register-input-fields" type="password"
+                        placeholder="Password" required>
+                    <div class="register-password-container flex-center flex-column">
+                        <input id="register-input-confirm-password" class="register-input-fields"
+                            onkeydown="removeConfirmPasswordError()" type="password" placeholder="Confirm Password"
+                            required>
+                        <span id="register-input-password-error" class="d-none">Ups! Your password don't match</span>
+                    </div>
+                    <label>
+                        <input id="register-privacy-policy-checkbox" type="checkbox" required> I accept the
+                        <a class="register-checkbox-link color-lightblue" href="./privacy.html">Privacy policy</a>
+                    </label>
+                    <div class="register-buttons-container flex-center">
+                        <button class="register-signup-button" type="submit">Sign
+                            up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="register-imprint-container">
+            <a class="register-imprint-links" href="./privacy.html">Privacy Policy</a>
+            <a class="register-imprint-links" href="./legal.html">Legal notice</a>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

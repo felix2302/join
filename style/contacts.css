@@ -1,0 +1,678 @@
+/* Contacts list */
+
+.d-flex {
+    display: flex;
+}
+
+.d-block,
+.contacts-main-container {
+    display: block;
+}
+
+.contacts-container {
+    max-width: 1208px;
+    height: calc(100vh - 160px);
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.contacts-list {
+    padding: 24px 0 120px;
+    width: 100%;
+    display: grid;
+    grid-auto-rows: min-content;
+    gap: 8px;
+    height: auto;
+    background: #fff;
+    overflow-y: scroll;
+    box-shadow: inset 0px 4px 6px 0px #00000014; 
+    position: relative;
+}
+
+.contacts-list::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.contacts-list::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.contacts-list::-webkit-scrollbar-thumb {
+  background: #A8A8A8;
+  border-radius: 4px; 
+}
+
+.contacts-list::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: hsl(0, 0%, 60%);
+}
+
+.contacts-list::-webkit-scrollbar-thumb:active {
+  background: hsl(0, 0%, 54%); 
+}  
+
+.add-new-contact-button {
+    display: none;
+}
+
+.add-person-icon {
+    width: 56px;
+    height: 56px;
+    padding: 12px;
+    color: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    cursor: pointer;
+    position: fixed;
+    bottom: calc(88px - 56px + 80px);
+    right: calc(70px - 56px);
+    transition: fill 100ms ease-in;
+}
+ 
+.add-person-icon:active {
+    background: #29ABE2; 
+}
+
+.single-contact-triple-dots {
+    cursor: pointer;
+    position: fixed;
+    bottom: calc(88px - 56px + 80px);
+    right: calc(70px - 56px);
+    z-index: 5;
+}
+
+.single-contact-triple-dots-svg {
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.single-contact-triple-dots-svg rect {
+  fill: #2A3647; 
+  transition: fill 100ms ease-in;
+}
+
+.single-contact-triple-dots-svg:active rect {
+  fill: #29ABE2; 
+}
+
+.contacts-list h3,
+.contacts-list p {
+    font-size: 15px;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.contacts-list h3 {
+    margin-left: 28px;
+    align-self: center;
+}
+
+.contacts-line {
+    width: 100%;
+    height: 1px;
+    background-color: #d1d1d1;
+    justify-self: center;
+}
+
+.contacts-list-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-self: center;
+    padding: 15px 0;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.contacts-list-box-entry:active {
+    background: linear-gradient(180deg, hsl(210, 12%, 98%) 0%, hsl(210, 12%, 95%) 100%);
+}
+
+.contacts-view-contact, .viewed-contact {
+    background: #2A3647;
+    color: #fff;
+}
+
+.contacts-view-contact:hover, .viewed-contact:hover {
+    background: #2A3647;
+    color: #fff;
+}
+
+.contacts-profile-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: 16px;
+}
+
+.contacts-link {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.contacts-email {
+    font-size: 12px;
+    overflow-wrap: break-word;
+}
+
+.contacts-list p,
+.contacts-email {
+    overflow-wrap: break-word; 
+    flex: 1; 
+}
+
+.contacts-list-name-and-email {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-wrap: break-word;
+    padding-right: 8px;
+}
+
+/* Single contact - mobile view */
+
+.single-contact-container {
+    max-width: 1016px;
+    margin-top: 80px;
+    padding-top: 48px;
+    height: calc(100vh - 160px);
+}
+
+.single-contact {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+.single-contact h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+    padding-bottom: 6px;
+}
+
+.single-contact p,
+.single-contact-information p,
+.mobile-view-padding-16 {
+    padding-bottom: 16px;
+}
+
+.single-contact-20 {
+    font-size: 20px;
+}
+
+.single-contact-arrow-left {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    transition: transform 10ms linear;   
+}
+
+.single-contact-arrow-left:active {
+    transform: scale(1.15); 
+}
+
+.single-contact-subheader {
+    display: flex;
+    flex-direction: column-reverse;
+    font-size: 20px;
+}
+
+.single-contact-blue-line {
+    width: 90px;
+    background: #29ABE2;
+    height: 3px;
+    margin: 0 16px 40px;
+}
+
+.single-contact-profile-badge {
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.single-contact-badge-and-name {
+    margin: 20px 16px;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.single-contact-name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.edit-and-delete-contact {
+    display: none;
+}
+
+.single-contact-information {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+.single-contact-link {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.single-contact-email-phone {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.desktop-view-padding-24 {
+    padding-bottom: 16px;
+}
+
+.desktop-view-padding-40 {
+    padding-bottom: 16px;
+}
+
+/* Edit and delete pop-up */
+
+.edit-delete-popup {
+    color: #2A3647;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    width: 116px;
+    height: 100px;
+    padding: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0 20px;
+    position: fixed;
+    bottom: calc(88px - 56px + 75px);
+    right: calc(70px - 56px);
+    z-index: 25;
+    transform: translateX(0%);
+    transition: transform 300ms ease-out;
+    background-color: white;
+}
+
+.hide-edit-delete-popup {
+    transform: translateX(120%);
+}
+
+.mobile-view-padding-8 {
+    padding: 8px;
+}
+
+.edit-contact,
+.delete-contact {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.edit-contact:hover,
+.delete-contact:hover {
+    font-weight: 700;
+    color:#29ABE2;
+}
+
+.edit-contact:hover .edit-icon path,
+.delete-contact:hover .delete-icon path {
+    fill: #29ABE2;
+}
+
+.edit-and-delete-contact img {
+    width: 20px;
+    height: 20px;
+}
+
+@media only screen and (min-width: 352px) {
+    .contacts-profile-badge {
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .contacts-list h3 {
+        margin-left: 30px;
+    }
+
+    .contacts-list h3,
+    .contacts-list p {
+        font-size: 16px;
+    }
+
+    .contacts-link,
+    .contacts-email {
+        font-size: 13px;
+    }
+
+    .contacts-line {
+        width: 352px;
+    }
+    .single-contact-badge-and-name {
+        flex-direction: row;
+        align-items: center;    
+    }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 800px) {
+    .single-contact-container {
+        padding-left: 3%;
+    }
+}
+
+@media only screen and (min-width: 376px) {
+    .contacts-list-box {
+    width: 352px;
+    border-radius: 10px;
+    }
+}
+
+@media only screen and (min-width: 440px) {
+    .contacts-profile-badge {
+        margin-left: 24px;
+    }
+
+    .contacts-list h3 {
+        margin-left: 38px;;
+    }
+
+    .contacts-list h3,
+    .contacts-list p {
+        font-size: 20px;
+    }
+
+    .contacts-list-box {
+        grid-template-columns: 104px 248px;
+        min-width: 352px;
+    }
+
+    .contacts-link,
+    .contacts-email {
+        font-size: 16px;
+    }
+
+    .single-contact h1 {
+        font-size: 47px;
+    }
+
+    .single-contact-name {
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
+ 
+@media only screen and (min-width: 576px) {
+    .single-contact-name {
+        font-size: 36px;
+    }
+
+    .single-contact h1 {
+        font-size: 61px;
+        padding: 0;
+    }
+
+    .single-contact-profile-badge {
+        width: 90px;
+        height: 90px;
+        font-size: 32px;
+    }  
+}
+
+/* Desktop view */
+
+@media only screen and (min-width: 1200px) {
+    .contacts-container {
+        margin-left: 232px;
+        height: calc(100vh - 96px);
+        margin-top: 96px;
+    }
+
+    .contacts-list {
+        padding-left: 28px;
+    }
+
+    .contacts-list-box,
+    .contacts-line {
+        justify-self: flex-start;
+    }
+
+    .contacts-list-box-entry:hover {
+        background: linear-gradient(180deg, hsl(210, 12%, 98%) 0%, hsl(210, 12%, 95%) 100%);
+        cursor: pointer;
+    }
+
+    .contacts-list-box-entry:active {
+        background: #2A3647;
+        color: #fff;
+    }
+
+    .contacts-view-contact:hover,
+    .viewed-contact:hover {
+        background: #2A3647;
+        color: #fff;
+    }
+
+    .add-person-icon,
+    .single-contact-triple-dots,
+     
+    .edit-delete-popup {
+        display: none;
+    }
+
+    .add-new-contact-button-div {
+        justify-self: center;
+        margin: 3px 0 8px; 
+    }
+
+    .add-new-contact-button {
+        width: 352px;
+        height: 56px;
+        background: #2A3647;
+        color: #fff;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 21px;
+        font-weight: 700;
+        cursor: pointer;
+        justify-self: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .add-new-contact-button:hover {
+        background: #29ABE2;
+    }
+    
+    .add-new-contact-button:active {
+        background: #091931;
+    }
+
+    /* Single contact - desktop view */
+
+    .single-contact-container {
+        padding-top: 110px;
+        margin-left: 290px;
+        height: calc(100vh - 96px);
+    }
+    
+    .single-contact {
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        gap: 24px;
+    }
+    
+    .single-contact-header {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .single-contact-subheader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 27px;
+        gap: 30px;
+    }
+
+    .mobile-view-padding-16 {
+        padding: 0;
+    }
+
+    .padding-bottom-16 {
+        padding-bottom: 16px;
+    }
+
+    .padding-bottom-24 {
+        padding-bottom: 24px;
+    }
+
+    .padding-bottom-40 {
+        padding-bottom: 40px;
+    }
+    
+    .single-contact-20 {
+        font-size: 20px;
+    }
+
+    .single-contact-blue-line {
+        width: 3px;
+        height: 59px;
+        margin: 0;
+    }
+
+    .single-contact h1 {
+        font-size: 47px;
+    }
+
+    .single-contact-name {
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    .single-contact-profile-badge {
+        width: 70px;
+        height: 70px;
+        font-size: 25px;
+    }
+
+    .single-contact-badge-and-name {
+        margin: 36px 0 48px 0;
+        gap: 48px;
+    }
+
+    .contact-name-edit-delete {
+        display: flex;
+        flex-flow: column;
+        gap: 8px;
+    }
+
+    .edit-and-delete-contact {
+        color: #2A3647;
+        display: grid;
+        grid-template-columns: 62px 81px; 
+        gap: 18px; 
+    }
+
+    .single-contact-information {
+        margin: 0;
+    }
+
+    .desktop-view-padding-24 {
+        padding-bottom: 24px;
+    }
+    
+    .desktop-view-padding-40 {
+        padding-bottom: 40px;
+    }
+}
+
+@media only screen and (min-width: 1120px) and (max-width: 1480px) {
+    .contacts-list h3,
+    .contacts-list p {
+        font-size: 16px;
+    }
+
+    .contacts-link,
+    .contacts-email {
+        font-size: 13px;
+    }
+
+    .contacts-list-box {
+        grid-template-columns: 3fr 7fr;
+        min-width: 90%;
+    }
+
+    .add-new-contact-button,
+    .contacts-line,
+    .contacts-list-box {
+        width: 90%;
+    }
+
+    .single-contact-profile-badge {
+        width: 70px;
+        height: 70px;
+        font-size: 25px;
+    }
+
+    .single-contact-profile-badge {
+        width: 70px;
+        height: 70px;
+        font-size: 25px;
+    }
+
+    .single-contact-name {
+        font-size: 28px;
+    }
+
+    .single-contact h1 {
+        font-size: 47px;
+    }
+ 
+    .contacts-profile-badge {
+        margin-left: 16px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 1120px) {
+    .contacts-main-container {
+        display: flex;
+    }
+
+    .single-contact-container {
+        display: block;
+        margin-left: 55px;
+        padding-right: 24px;
+    }
+
+    .contacts-list {
+        width: 456px;
+        align-items: center;
+    } 
+}
+ 
+@media only screen and (min-width: 1480px) {  
+    .single-contact-name {
+        font-size: 47px;
+    }
+}
+
+
+
+@media only screen and (min-width: 1120px) {
+    .single-contact-arrow-left {
+        display: none;
+    }
+}

@@ -1,0 +1,164 @@
+.privacy-container {
+    max-width: 1016px;
+    margin-top: 80px;
+    padding-top: 48px;
+    height: calc(100vh - 160px);
+    overflow-y: scroll;
+}
+
+.privacy-container::-webkit-scrollbar {
+  width: 4px; 
+}
+
+.privacy-container::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.privacy-container::-webkit-scrollbar-thumb {
+  background: #A8A8A8;
+  border-radius: 2px; 
+}
+
+.privacy-container::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: #999999;
+}
+
+.privacy-container::-webkit-scrollbar-thumb:active {
+  background: #8a8a8a; 
+} 
+
+.privacy {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 16px;
+}
+
+.privacy h1 { 
+    font-size: 47px;
+    line-height: 56.4px;
+    font-weight: 700;
+    color: #000;
+}
+
+.privacy-arrow-left {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    transition: transform 10ms linear;   
+}
+
+.privacy-arrow-left:active {
+    transform: scale(1.15); 
+}
+
+.privacy-text {
+    margin: 16px 16px 184px;
+}
+
+.privacy-text h1 {
+    font-size: 24px;
+    padding: 32px 0 16px;
+}
+
+.privacy-text h2 {
+    font-size: 20px;
+    padding: 40px 0 16px;
+}
+
+.legal-text h2 {
+    padding-top: 16px;
+}
+
+.privacy-text h3,
+.privacy-text h4 {
+    padding: 24px 0 12px;
+}
+
+.privacy-text p,
+.privacy-text li {
+    font-size: 14px;
+}
+
+.legal-text h3,
+.legal-insert-gap {
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 0;
+}
+
+.privacy-link {
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 440px) {
+    .privacy-text h1 {
+        font-size: 32px;
+    }
+
+    .privacy-text h2 {
+        font-size: 24px;
+    }
+
+    .privacy-text p,
+    .privacy-text li {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .privacy {
+        margin: 48px 96px 0 96px;
+        align-items: center;
+    }
+
+    .privacy-text {
+        margin: 16px 96px 184px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .privacy-body {
+        height: calc(100vh - 96px);
+    }
+
+    .privacy-container {
+        margin-left: 232px;
+        margin-top: 96px;
+        padding-top: 110px;
+        height: calc(100vh - 96px);
+    }
+    
+    .privacy {
+        margin: 0 96px 0 96px;
+        align-items: center;
+    }
+
+    .privacy-text {
+        margin: 32px 96px 110px;
+    }
+
+    .privacy h1 {
+        font-size: 61px;
+        line-height: 73.2px;
+    }
+
+    .legal-text h2 {
+        padding-top: 0;
+    }
+
+    .privacy-arrow-left {
+        height: 37px;
+        width: 37px;
+    }
+
+    .privacy-arrow-left:hover {
+        transform: scale(1.15); 
+    }
+}
+
+@media only screen and (min-width: 1120px) {
+    .privacy-container::-webkit-scrollbar {
+        width: 0px; /* Hide scrollbar */
+    }
+}

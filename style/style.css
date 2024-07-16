@@ -1,0 +1,125 @@
+@font-face {
+    font-family: "inter";
+    src: url("../assets/fonts/Inter-VariableFont.ttf");
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "inter";
+    font-size: 16px;
+    background-color: #F6F7F8;
+}
+
+.transition-100 {
+    transition: all 100ms ease-in-out;
+}
+
+.transition-200 {
+    transition: all 200ms ease-in-out;
+}
+
+.transition-300 {
+    transition: all 300ms ease-in-out;
+}
+
+.d-none {
+    display: none;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-lightgrey {
+    background-color: rgb(246, 247, 248);
+}
+
+.bg-darkblue {
+    background-color: rgba(42, 54, 71, 1);
+}
+
+.bg-white {
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-red {
+    background-color: rgba(255, 61, 0, 1);
+}
+
+.bg-lightorange {
+    background-color: rgba(255, 168, 0, 1);
+}
+
+.bg-lightgreen {
+    background-color: rgba(122, 226, 41, 1);
+}
+
+.color-lightblue {
+    color: rgba(41, 171, 226, 1);
+}
+
+.color-darkblue {
+    color: rgba(42, 54, 71, 1);
+}
+
+.color-lightgrey {
+    color: rgba(209, 209, 209, 1);
+}
+
+.color-black {
+    color: black;
+}
+
+.color-white {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}

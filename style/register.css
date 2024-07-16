@@ -1,0 +1,252 @@
+body {
+    transition: all 100ms ease-in-out;
+}
+
+.register-main {
+    height: 100vh;
+}
+
+#register-logo {
+    position: absolute;
+    top: 67px;
+    left: 77px;
+    width: 100px;
+    height: 120px;
+}
+
+.register-container {
+    position: relative;
+    margin-top: 200px;
+    margin-bottom: 64px;
+    padding: 44px 88px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+}
+
+.register-arrow-left-line {
+    position: absolute;
+    left: 40px;
+    top: 67px;
+    height: 32px;
+    width: 32px;
+}
+
+.register-arrow-left-line:hover {
+    background-color: rgb(246, 247, 248);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.register-container h1 {
+    font-size: 61px;
+    margin-bottom: 16px;
+}
+
+.register-underline {
+    height: 3px;
+    width: 150px;
+    margin-bottom: 32px;
+    background-color: rgba(41, 171, 226, 1);
+}
+
+.register-input-fields {
+    width: 422px;
+    height: 48px;
+    border-radius: 10px;
+    padding: 12px 21px;
+    border: 1px solid rgba(209, 209, 209, 1);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#register-input-name {
+    background: url('../assets/icons/person.svg') no-repeat right 21px center;
+}
+
+#register-input-email {
+    background: url('../assets/icons/mail.svg') no-repeat right 21px center;
+    margin-bottom: 0px;
+}
+
+#register-input-password {
+    background: url('../assets/icons/lock.svg') no-repeat right 21px center;
+    margin-top: 20px;
+}
+
+#register-input-confirm-password {
+    background: url('../assets/icons/lock.svg') no-repeat right 21px center;
+    margin-bottom: 0px;
+}
+
+.register-error-border {
+    border-color: red;
+}
+
+#register-input-password-error {
+    color: red;
+    font-size: 12px;
+}
+
+#register-input-email-error {
+    color: red;
+    font-size: 12px;
+}
+
+.register-signup-button {
+    width: 126px;
+    height: 55px;
+    border-radius: 8px;
+    color: white;
+    background-color: #2A3647;
+    border: hidden;
+    padding: 15px 24px;
+    font-weight: 700;
+    font-size: 21px;
+    margin-top: 32px;
+}
+
+.register-signup-button:hover {
+    cursor: pointer;
+    background-color: rgba(41, 171, 226, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#register-privacy-policy-checkbox {
+    margin-top: 36px;
+}
+
+#register-privacy-policy-checkbox:hover {
+    cursor: pointer;
+}
+
+.register-checkbox-link {
+    text-decoration: none;
+}
+
+.register-imprint-links {
+    text-decoration: none;
+    padding: 8px;
+    color: rgba(168, 168, 168, 1);
+    transition: all 100ms ease-in-out;
+}
+
+.register-imprint-links:hover {
+    font-weight: 700;
+    color: rgba(41, 171, 226, 1);
+}
+
+.register-imprint-container {
+    margin-bottom: 48px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.register-success-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.register-success-message {
+    display: none;
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2A3647;
+    color: white;
+    padding: 20px;
+    font-size: 21px;
+    font-weight: 400;
+    border-radius: 10px;
+    z-index: 11;
+    text-align: center;
+}
+
+.register-success-message.show {
+    display: block;
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        bottom: -100px;
+    }
+    to {
+        bottom: 50%;
+    }
+}
+
+
+@media (max-width: 800px) {
+    #register-logo {
+        top: 37px;
+        left: 38px;
+        height: 78px;
+        width: 64px;
+    }
+
+    .register-container {
+        margin-top: 165.5px;
+        padding: 32px 16px;
+    }
+
+    .register-arrow-left-line {
+        left: 32px;
+        top: 40px;
+    }
+
+    .register-container h1 {
+        font-size: 47px;
+    }
+
+    .register-underline {
+        width: 88px;
+        margin-bottom: 24px;
+    }
+
+    .register-input-fields {
+        max-width: 364px;
+    }
+
+    .register-signup-button {
+        width: 180px;
+        height: 51px;
+    }
+
+    .register-success-overlay {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    @keyframes slideUp {
+        from {
+            bottom: -100px;
+        }
+        to {
+            bottom: 22%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        padding:32px 16px;
+        width: 90%;
+    }
+
+    .register-input-fields {
+        width: 90%;
+    }
+
+    .register-arrow-left-line {
+        left: 20px;
+    }
+}

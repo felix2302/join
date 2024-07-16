@@ -1,0 +1,441 @@
+body {
+    height: 100vh;
+    overflow-y: hidden;
+    transition: all 100ms ease-in-out;
+}
+
+.board-scrollable-content {
+    overflow: scroll;
+    height: 100%;
+}
+
+main {
+    height: calc(100vh - 96px);
+    margin-top: 96px;
+    margin-left: 232px;
+}
+
+.board-upper-content {
+    width: 100%;
+    max-width: 1208px;
+    display: flex;
+    flex-direction: column;
+}
+
+.board-header {
+    margin-top: 79.5px;
+    width: 100%;
+    max-width: 1208px;
+    padding: 0 64px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-header-lower-section-responsive {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.board-upper-content h1 {
+    font-size: 61px;
+    font-weight: 700;
+}
+
+#board-find-input {
+    display: block;
+    margin-right: 32px;
+    height: 48px;
+    width: 312px;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background-color: white !important;
+    border: 1px solid rgba(168, 168, 168, 1);
+    font-size: 20px;
+    font-weight: 400;
+    background:
+        url('../assets/img/bar-grey.png') no-repeat right 56px center,
+        url('../assets/icons/search.png') no-repeat right 18px center;
+    background-size: 1px 40px, auto;
+}
+
+#board-find-input-responsive {
+    display: none;
+    height: 48px;
+    width: 364px;
+    border-radius: 10px;
+    padding: 8px 16px;
+    background-color: white !important;
+    border: 1px solid rgba(168, 168, 168, 1);
+    font-size: 20px;
+    font-weight: 400;
+    background:
+        url('../assets/img/bar-grey.png') no-repeat right 56px center,
+        url('../assets/icons/search.png') no-repeat right 18px center;
+    background-size: 1px 40px, auto;
+}
+
+#board-add-task-button {
+    width: 160px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid rgba(42, 54, 71, 1);
+    padding: 8px 16px;
+    color: white;
+    font-weight: 700;
+    font-size: 21px;
+}
+
+#board-add-task-button:hover {
+    cursor: pointer;
+    background-color: rgba(41, 171, 226, 1);
+    border: 1px solid rgba(41, 171, 226, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+#board-add-task-button-responsive {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(42, 54, 71, 1);
+    padding: 3px;
+    color: white;
+}
+
+#board-add-task-button-responsive:hover {
+    cursor: pointer;
+    background-color: rgba(41, 171, 226, 1);
+    border: 1px solid rgba(41, 171, 226, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.board-ticket-section {
+    height: 100vh;
+    width: 100%;
+    max-width: 1208px;
+    margin-top: 55.5px;
+    padding: 0px 64px;
+}
+
+.board-categories {
+    display: flex;
+    justify-content: space-between;
+}
+
+.board-category-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(66, 82, 110, 1);
+}
+
+.board-category {
+    width: 100%;
+}
+
+.board-categories-add-task-button rect,
+path {
+    transition: all 100ms ease-in-out;
+}
+
+.board-categories-add-task-button:hover rect {
+    stroke: rgba(41, 171, 226, 1);
+}
+
+.board-categories-add-task-button:hover path {
+    stroke: rgba(41, 171, 226, 1);
+}
+
+.board-categories-add-task-button:hover {
+    cursor: pointer;
+}
+
+.board-ticket-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashed-container {
+    background-color: rgba(218, 218, 218, 0.534);
+    border-radius: 24px;
+}
+
+.board-ticket {
+    max-width: 252px;
+    width: -webkit-fill-available;
+    height: fit-content;
+    flex: 0 0 auto;
+    border-radius: 24px;
+    padding: 16px;
+    margin: 8px;
+    box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+
+.board-ticket:hover {
+    cursor: pointer;
+}
+
+.board-ticket:active {
+    cursor: grabbing;
+}
+
+.board-ticket-tend {
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+
+.board-ticket-content {
+    gap: 24px;
+}
+
+.board-ticket-gategory {
+    border-radius: 8px;
+    width: fit-content;
+    padding: 4px 16px;
+    color: white;
+}
+
+.board-ticket-assigned-container {
+    margin-left: 8px;
+}
+
+.board-ticket-assigned {
+    height: 32px;
+    width: 32px;
+    background-color: aqua;
+    border-radius: 45px;
+    color: white;
+    border: 1px solid white;
+    font-size: 12px;
+    margin-left: -8px;
+}
+
+.user-story-bg {
+    background-color: rgba(0, 56, 255, 1);
+}
+
+.technical-task-bg {
+    background-color: rgba(31, 215, 193, 1);
+}
+
+.board-ticket-headline {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: rgba(42, 54, 71, 1)
+}
+
+.board-ticket-task {
+    color: rgba(168, 168, 168, 1);
+    max-height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+
+#board-ticket-statusbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.board-ticket-bar {
+    min-width: 78px;
+    max-width: 128px;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(244, 244, 244, 1);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 3px;
+}
+
+#board-ticket-bar-progress {
+    height: 100%;
+    background-color: rgba(0, 56, 255, 1);
+    border-radius: 16px;
+    transition: width 0.3s ease-in-out;
+}
+
+.board-ticket-progress {
+    margin-left: 3px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.board-no-tasks-placeholder {
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    max-width: 252px;
+    width: -webkit-fill-available;
+    height: 48px;
+    color: rgba(168, 168, 168, 1);
+    border-radius: 10px;
+    background-color: rgba(231, 231, 231, 1);
+    border: 1px dashed rgba(168, 168, 168, 1);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.overflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+@media (max-width: 1200px) {
+    main {
+        height: calc(100vh - 80px);
+        margin-left: 0;
+    }
+
+    .board-header {
+        margin-top: 48px;
+    }
+
+    .board-categories {
+        flex-direction: column;
+    }
+
+    .board-category-header {
+        max-width: 364px;
+        width: 100%;
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .board-category {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 26px;
+        width: 100%;
+    }
+
+    .board-ticket-container {
+        height: fit-content;
+        flex-direction: row;
+        align-items: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: 10px;
+    }
+
+    .board-ticket-container::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    .board-ticket-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .board-ticket-container::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+
+    .board-ticket-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .board-categories {
+        padding-bottom: 80px;
+    }
+
+    .board-ticket-section {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 80px;
+    }
+
+    .board-header {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 850px) {
+        #board-add-task-button {
+            display: none;
+        }
+
+        #board-add-task-button-responsive {
+            display: flex;
+        }
+
+        #board-find-input {
+            display: none;
+        }
+
+        #board-find-input-responsive {
+            display: flex;
+            margin-top: 40px;
+        }
+
+        .board-header {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 48px;
+        }
+
+        .board-header-responsive {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .board-header-responsive h1 {
+            font-size: 47px;
+        }
+
+        .board-header-lower-section-responsive {
+            justify-content: flex-start;
+        }
+
+        .board-ticket-section {
+            margin-top: 32px;
+        }
+    }
+
+    @media (max-width: 470px) {
+        #board-find-input-responsive {
+            max-width: 364px;
+            width: 100%;
+        }
+
+        .board-no-tasks-placeholder {
+            width: 100%;
+            max-width: 364px;
+        }
+    }

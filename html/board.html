@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/board.css">
+    <link rel="stylesheet" href="../style/navigation.css">
+    <link rel="stylesheet" href="../style/taskdetail.css">
+    <link rel="stylesheet" href="../style/addtask.css">
+    <title>Board</title>
+    <script src="../script/board.js" defer></script>
+    <script src="../script/boardHTML.js"></script>
+    <script src="../script/script.js" defer></script>
+    <script src="../script/task.js" defer></script>
+    <script src="../script/taskEdit.js" defer></script>
+    <script src="../script/taskEditStyleHTML.js" defer></script>
+    <script src="../script/addtask.js" defer></script>
+    <script src="../script/addTaskStyleHTML.js" defer></script>
+    <script src="../script/newTaskInBoard.js" defer></script>
+</head>
+
+<body onload="initBoard()">
+    <div w3-include-html="../assets/templates/navigation.html"></div>
+    <main>
+        <div class="board-scrollable-content">
+
+            <div class="board-upper-content">
+                <div class="board-header flex-row">
+                    <div class="board-header-responsive flex-row">
+                        <h1>Board</h1>
+                        <button id="board-add-task-button-responsive" class="bg-darkblue flex-center" type="button"
+                            onclick="openAddTaskInBoard('todo')"><img src="../assets/icons/add.svg" alt="+"></button>
+                    </div>
+                    <div class="board-header-lower-section-responsive">
+                        <input id="board-find-input" onkeydown="startFilterTasks('board-find-input')" type="text"
+                            placeholder="Find Task">
+                        <input id="board-find-input-responsive"
+                            onkeydown="startFilterTasks('board-find-input-responsive')" type="text"
+                            placeholder="Find Task">
+                        <button id="board-add-task-button" class="bg-darkblue flex-center transition-100" type="button"
+                            onclick="openAddTaskInBoard('todo')">Add task<img src="../assets/icons/add.svg"
+                                alt="+"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="board-ticket-section">
+                <div class="board-categories flex-row">
+
+                    <div class="board-category">
+                        <div class="board-category-header">
+                            <span>To do</span>
+                            <div onclick="openAddTaskInBoard('todo')" class="board-categories-add-task-button">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647"
+                                        stroke-width="2" />
+                                    <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="board-ticket-container-todo" class="board-ticket-container" ondrop="moveTo('todo', 'todo')"
+                            ondragover="allowDrop(event, 'todo')" ondragleave="removeDashed('todo')">
+                            <div class="board-no-tasks-placeholder flex-center">No tasks to do</div>
+                        </div>
+                    </div>
+
+                    <div class="board-category">
+                        <div class="board-category-header">
+                            <span>In progress</span>
+                            <div onclick="openAddTaskInBoard('inprogress')" class="board-categories-add-task-button">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647"
+                                        stroke-width="2" />
+                                    <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="board-ticket-container-in-progress" class="board-ticket-container"
+                            ondrop="moveTo('inprogress', 'in-progress')" ondragover="allowDrop(event, 'in-progress')" ondragleave="removeDashed('in-progress')">
+                            <div class="board-no-tasks-placeholder flex-center">No tasks to do</div>
+                        </div>
+                    </div>
+
+                    <div class="board-category">
+                        <div class="board-category-header">
+                            <span>Await feedback</span>
+                            <div onclick="openAddTaskInBoard('awaitfeedback')" class="board-categories-add-task-button">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647"
+                                        stroke-width="2" />
+                                    <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="board-ticket-container-await-feedback" class="board-ticket-container"
+                            ondrop="moveTo('awaitfeedback', 'await-feedback')" ondragover="allowDrop(event, 'await-feedback')" ondragleave="removeDashed('await-feedback')">
+                            <div class="board-no-tasks-placeholder flex-center">No tasks to do</div>
+                        </div>
+                    </div>
+
+                    <div class="board-category">
+                        <div class="board-category-header">
+                            <span>Done</span>
+                            <div onclick="openAddTaskInBoard('done')" class="board-categories-add-task-button">
+                                <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647"
+                                        stroke-width="2" />
+                                    <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="board-ticket-container-done" class="board-ticket-container" ondrop="moveTo('done', 'done')"
+                            ondragover="allowDrop(event, 'done')" ondragleave="removeDashed('done')">
+                            <div class="board-no-tasks-placeholder flex-center">No tasks to do</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="addTaskBg" class="add-task-dialog-bg flex-center transition-300" style="display: none; opacity: 0;" onclick="closeNewTaskInBoard();">
+        <div onclick="handleClickEvent(event); stopProp(event);" id="newTaskContainer" class="sum-in-board-html flex-column transition-300"
+            style="transform: translateX(1500px);">
+        </div>
+    </div>
+    <div id="succesImgCnt" class="addedsuccesfully transition-300" style="display: none;">
+        <img id="succesImg" src="../assets/img/Added-to-board.png" alt="succes" style="transform: translateY(500px);">
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/login.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <title>Login</title>
+    <script src="./script/login.js" defer></script>
+    <script src="./script/script.js" defer></script>
+</head>
+
+<body class="login-body bg-lightgrey" id="loginBody" onload="initLogin()">
+    <div id="login-start-animation-bg" class="d-none">
+        <div class="login-logo-animation-container">
+            <img id="login-animation-logo" class="login-animation-logo-responsive" src="./assets/img/logo.png" alt="">
+            <img id="login-animation-logo-white" class="login-animation-logo-responsive-white d-none" src="./assets/img/logo_white.svg" alt="">
+        </div>
+    </div>
+    <main class="flex-column flex-center">
+        <div class="login-signup-container flex-row flex-center">
+            <p>Not a Join user?</p>
+            <a href="./html/register.html"><button class="login-signup-button" type="button">Sign up</button></a>
+        </div>
+        <div class="login-container flex-column flex-center">
+            <div>
+                <h1>Log in</h1>
+            </div>
+            <div class="login-underline"></div>
+            <form onsubmit="login();return false">
+                <div class="flex-column flex-center gap-20">
+                    <div class="flex-column flex-center">
+                        <input id="login-input-email" autocomplete="username" onkeydown="removeUserError()"
+                            class="login-input-fields" type="email" placeholder="Email" required>
+                        <span id="login-input-user-error" class="d-none">User not found! Try again.</span>
+                    </div>
+                    <div class="login-password-container flex-center flex-column">
+                        <input id="login-input-password" autocomplete="current-password"
+                            onkeydown="removePasswordError()" class="login-input-fields" type="password"
+                            placeholder="Password" required>
+                        <img onclick="toggleVisibility()" id="login-visibility-toggle-img"
+                            src="./assets/icons/visibility_off.svg" alt="">
+                        <div>
+                            <span id="login-input-password-error" class="d-none">Wrong password Ups! Try again.</span>
+                        </div>
+                    </div>
+                    <label class="login-checkbox-field">
+                        <input id="login-remember-me-checkbox" type="checkbox"> Remember me
+                    </label>
+                </div>
+                <div class="login-buttons-container flex-row flex-center">
+                    <button class="login-button" type="submit">Log in</button>
+                    <a onclick="guestUserActive()"><button class="login-guest-login-button" type="button">Guest Log
+                            in</button></a>
+                </div>
+            </form>
+        </div>
+        <div class="login-responsive-signup-container flex-row flex-center gap-20">
+            <p>Not a Join user?</p>
+            <a href="./html/register.html"><button class="login-signup-button" type="button">Sign up</button></a>
+        </div>
+        <div class="login-imprint-container">
+            <a href="./html/privacy.html">Privacy Policy</a>
+            <a href="./html/legal.html">Legal notice</a>
+        </div>
+    </main>
+</body>
+
+</html>
